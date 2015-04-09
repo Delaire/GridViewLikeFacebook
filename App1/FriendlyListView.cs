@@ -44,20 +44,8 @@ namespace App1
         {
             var list = (FriendlyListView)d;
 
-            //if (list._viewport.Viewport.Top.Equals(list.ScrollPosition)) return;
-
-            //if (list._viewport.ManipulationState == ManipulationState.Idle)
-            //{
-            //    list._viewport.SetViewportOrigin(new Point(0, list.ScrollPosition));
-            //}
-
             if (list._viewport.ViewportHeight.Equals(list.ScrollPosition)) return;
-
-            if (list._viewport.ManipulationMode == ManipulationModes.None)
-            {
-                //list._viewport.SetValue(new Point(0, list.ScrollPosition));
-                //list._viewport.SetViewportOrigin(new Point(0, list.ScrollPosition));
-            }
+            
         }
     }
 }
