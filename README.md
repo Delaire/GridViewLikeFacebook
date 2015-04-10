@@ -43,6 +43,6 @@ here is the Storyboard code n the XAML page:
 </Storyboard>
 ```
 
-well this App is again not what i wanted so I create App3.
+well this App is again not what I wanted, because having to click on a button to hide or show my nav is not very practical...  So I create App3.
 
 ## App3
