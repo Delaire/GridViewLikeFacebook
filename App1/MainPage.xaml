@@ -8,34 +8,30 @@
  
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+	<Page.Resources>
+		<Storyboard x:Name="Storyboard1">
+			<DoubleAnimation Duration="0" To="1.244" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="stackPanel" d:IsOptimized="True"/>
+			<DoubleAnimation Duration="0" To="-141.791" Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="stackPanel" d:IsOptimized="True"/>
+		</Storyboard>
+	</Page.Resources>
 
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <Grid.Resources>
-            
             <local:ScrollToMarginConverter 
                 x:Key="ScrollToMarginConverter" />
-       
-            <Storyboard x:Name="StoryboardTest">
-                <DoubleAnimationUsingKeyFrames>
-                <!-- This keyframe animates the ellipse back down and makes
-                     it bounce. -->
-                <EasingDoubleKeyFrame Value="0" KeyTime="00:00:06">
-                    <EasingDoubleKeyFrame.EasingFunction>
-                        <BounceEase Bounces="5"/>
-                    </EasingDoubleKeyFrame.EasingFunction>
-                </EasingDoubleKeyFrame>
-                </DoubleAnimationUsingKeyFrames>
-            </Storyboard>
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0"
+        <StackPanel x:Name="stackPanel" Grid.Row="0"
                     Height="140"
-                    Margin="{Binding ScrollPosition, ElementName=list, Converter={StaticResource ScrollToMarginConverter}, ConverterParameter=140}"
+                    Margin="{Binding ScrollPosition, ElementName=list, Converter={StaticResource ScrollToMarginConverter}, ConverterParameter=140}" RenderTransformOrigin="0.5,0.5"
                     >
+        	<StackPanel.RenderTransform>
+        		<CompositeTransform/>
+        	</StackPanel.RenderTransform>
             <TextBox Text="Search for something" />
             <StackPanel Orientation="Horizontal">
                 <Rectangle Fill="Red" Height="50" Width="50" Margin="10"></Rectangle>
