@@ -14,9 +14,9 @@ So I created App2
 
 This app is a Simple app that has the same list as App1 and has 2 bottom buttons that are linked to Storyboards animations that will show and hide the top bar navigation.
 
-here is the code:
+here is the Storyboard code n the XAML page:
 
-'''
+```
 <Storyboard x:Name="HideTopNavStoryboard">
     <DoubleAnimation Duration="0:0:0.3"
                      To="-140"
@@ -41,4 +41,8 @@ here is the code:
                      Storyboard.TargetName="NavStackPanel" 
                      d:IsOptimized="True"/>
 </Storyboard>
-'''
+```
+
+well this App is again not what i wanted so I create App3.
+
+## App3
